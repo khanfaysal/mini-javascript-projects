@@ -50,5 +50,7 @@ window.addEventListener("DOMContentLoaded", function () {
         </div>
     </article>`;
     })
+    displayMenuItem = displayMenuItem.join('');
+    sectionCenter.innerHTML = displayMenuItem;
     console.log(displayMenuItem);
 })
