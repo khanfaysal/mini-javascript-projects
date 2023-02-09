@@ -83,7 +83,7 @@ function displayMenuItems(singleItem) {
 
     let displayMenuItem = singleItem.map(function (item) {
         console.log(item);
-        return ` <article class="singleItem-item">
+        return ` <article class="menu-item">
         <img src=${item.img} class="photo" alt=${item.title}>
         <div class="item-info">
             <header>
