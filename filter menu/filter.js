@@ -31,15 +31,59 @@ const menu = [
         img: "./images/item-1.jpg",
         desc: `Shabby chic keffiyeh neutra snackwave pork belly shoreditch. Prism austin mlkshk truffaut, `,
     },
+    {
+        id: 5,
+        title: "diner double",
+        category: "lunch",
+        price: 3.99,
+        img: "./images/item-1.jpg",
+        desc: `vaporware iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Marfa thundercats `,
+    },
+    {
+        id: 6,
+        title: "diner double",
+        category: "lunch",
+        price: 43.99,
+        img: "./images/item-1.jpg",
+        desc: `vaporware iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Marfa thundercats `,
+    },
 
 ]
 
 const sectionCenter = document.querySelector('.section-center');
 
+const filterBtn = document.querySelectorAll('.filter-btn');
+
+// load data item
 window.addEventListener("DOMContentLoaded", function () {
-    let displayMenuItem = menu.map(function (item) {
+    displayMenuItems(menu)
+})
+
+// filter button filtering
+
+filterBtn.forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+        const category = e.currentTarget.dataset.id;
+        const menuCategory = menu.filter(function (menuItem) {
+            // console.log(menuItem.category);
+            if (menuItem.category === category) {
+                return menuItem;
+            }
+        })
+        // console.log(menuCategory);
+        if (category === 'all') {
+            displayMenuItems(menu)
+        } else {
+            displayMenuItems(menuCategory)
+        }
+    })
+})
+
+function displayMenuItems(singleItem) {
+
+    let displayMenuItem = singleItem.map(function (item) {
         console.log(item);
-        return ` <article class="menu-item">
+        return ` <article class="singleItem-item">
         <img src=${item.img} class="photo" alt=${item.title}>
         <div class="item-info">
             <header>
@@ -52,5 +96,5 @@ window.addEventListener("DOMContentLoaded", function () {
     })
     displayMenuItem = displayMenuItem.join('');
     sectionCenter.innerHTML = displayMenuItem;
-    console.log(displayMenuItem);
-})
+    // console.log(displayMenuItem);
+}
