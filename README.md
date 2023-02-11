@@ -9,3 +9,4 @@ Here include few small javascript projects which help to grow our vanila js conc
 5. navbar toggle
 6. sidebar
 7. testimonial slider
+8. video project
