@@ -11,3 +11,11 @@ btn.addEventListener('click', function () {
     }
     console.log('shake and bake');
 })
+
+// preloader
+
+const preloader = document.querySelector(".preloader");
+
+window.addEventListener('load', function () {
+    preloader.classList.add('hide-preloader')
+})
