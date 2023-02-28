@@ -14,3 +14,13 @@ btn.addEventListener("click", function () {
 function getRandomNumber() {
     return Math.floor(Math.random() * hex.length)
 }
+
+// copy clipboard
+
+function copyToClipboard(element) {
+    var $temp = $("<input>");
+    $("body").append($temp);
+    $temp.val($(element).text()).select();
+    document.execCommand("copy");
+    $temp.remove();
+}
